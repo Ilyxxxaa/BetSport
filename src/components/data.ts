@@ -6,8 +6,9 @@ import liverpool from '../assets/images/liverpool.png';
 import arsenal from '../assets/images/arsenal.png';
 import napoli from '../assets/images/napoli.png';
 import juventus from '../assets/images/juventus.png';
+import lazio from '../assets/images/lazio.png';
 
-export const eventsArray = [
+export const liveEventsArray = [
   {
     tournamentName: 'Лига чемпионов 2022/23',
     events: [
@@ -48,6 +49,48 @@ export const eventsArray = [
         team2: 'Ювентус',
         team1logo: napoli,
         team2logo: juventus,
+      },
+    ],
+  },
+];
+
+export const nextEventsArray = [
+  {
+    tournamentName: 'Италия. Серия A',
+    events: [
+      {
+        id: 1,
+        team1: 'Лацио',
+        team2: 'Ювентус',
+        team1logo: lazio,
+        team2logo: juventus,
+        time: 'Сегодня 19:00',
+      },
+    ],
+  },
+  {
+    tournamentName: 'Англия. Премьер Лига',
+    events: [
+      {
+        id: 1,
+        team1: 'Арсенал',
+        team2: 'Челси',
+        team1logo: arsenal,
+        team2logo: chelsea,
+        time: 'Сегодня 21:45',
+      },
+    ],
+  },
+  {
+    tournamentName: 'Лига чемпионов 2022/23',
+    events: [
+      {
+        id: 2,
+        team1: 'Барселона',
+        team2: 'ПСЖ',
+        team1logo: barcelona,
+        team2logo: psg,
+        time: '12.01.2023 21:45',
       },
     ],
   },

@@ -10,7 +10,7 @@
   }
   @media (min-width: 640px) {
     .event-field {
-      grid-template-columns: 40px auto;
+      grid-template-columns: 100px auto;
     }
   }
 }
