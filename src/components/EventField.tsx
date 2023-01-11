@@ -1,20 +1,30 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface IProps {
-  event: {
-    id: number;
-    team1: string;
-    team2: string;
-    team1logo: string;
-    team2logo: string;
-    time?: string;
-  };
+  event: IEvent;
   isLive: boolean;
 }
 
+export interface IEvent {
+  id: number;
+  team1: string;
+  team2: string;
+  team1logo: string;
+  team2logo: string;
+  time?: string;
+}
+
 const EventField = ({ event, isLive }: IProps) => {
+  const navigate = useNavigate();
+
+  const eventHandler = () => {
+    navigate(`/event/${event.id}`);
+  };
+
   return (
-    <a
+    <div
+      onClick={eventHandler}
       key={event.id}
       className="event-field cursor-pointer border-t-4  border-green-400  hover:bg-green-100 p-2 sm:p-4"
     >
@@ -36,7 +46,7 @@ const EventField = ({ event, isLive }: IProps) => {
           <img src={event.team2logo} alt={event.team2} />
         </div>
       </div>
-    </a>
+    </div>
   );
 };
 

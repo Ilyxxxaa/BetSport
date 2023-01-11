@@ -32,7 +32,7 @@ export const liveEventsArray = [
     tournamentName: 'Англия. Премьер Лига',
     events: [
       {
-        id: 1,
+        id: 3,
         team1: 'Ливерпуль',
         team2: 'Арсенал',
         team1logo: liverpool,
@@ -44,7 +44,7 @@ export const liveEventsArray = [
     tournamentName: 'Италия. Серия A',
     events: [
       {
-        id: 1,
+        id: 4,
         team1: 'Наполи',
         team2: 'Ювентус',
         team1logo: napoli,
@@ -59,7 +59,7 @@ export const nextEventsArray = [
     tournamentName: 'Италия. Серия A',
     events: [
       {
-        id: 1,
+        id: 5,
         team1: 'Лацио',
         team2: 'Ювентус',
         team1logo: lazio,
@@ -72,7 +72,7 @@ export const nextEventsArray = [
     tournamentName: 'Англия. Премьер Лига',
     events: [
       {
-        id: 1,
+        id: 6,
         team1: 'Арсенал',
         team2: 'Челси',
         team1logo: arsenal,
@@ -85,7 +85,7 @@ export const nextEventsArray = [
     tournamentName: 'Лига чемпионов 2022/23',
     events: [
       {
-        id: 2,
+        id: 7,
         team1: 'Барселона',
         team2: 'ПСЖ',
         team1logo: barcelona,
@@ -93,5 +93,60 @@ export const nextEventsArray = [
         time: '12.01.2023 21:45',
       },
     ],
+  },
+];
+
+export const eventsArray = [
+  {
+    id: 1,
+    team1: 'Бавария',
+    team2: 'ПСЖ',
+    team1logo: bayern,
+    team2logo: psg,
+  },
+  {
+    id: 2,
+    team1: 'Барселона',
+    team2: 'Челси',
+    team1logo: barcelona,
+    team2logo: chelsea,
+  },
+  {
+    id: 3,
+    team1: 'Ливерпуль',
+    team2: 'Арсенал',
+    team1logo: liverpool,
+    team2logo: arsenal,
+  },
+  {
+    id: 4,
+    team1: 'Наполи',
+    team2: 'Ювентус',
+    team1logo: napoli,
+    team2logo: juventus,
+  },
+  {
+    id: 5,
+    team1: 'Лацио',
+    team2: 'Ювентус',
+    team1logo: lazio,
+    team2logo: juventus,
+    time: 'Сегодня 19:00',
+  },
+  {
+    id: 6,
+    team1: 'Арсенал',
+    team2: 'Челси',
+    team1logo: arsenal,
+    team2logo: chelsea,
+    time: 'Сегодня 21:45',
+  },
+  {
+    id: 7,
+    team1: 'Барселона',
+    team2: 'ПСЖ',
+    team1logo: barcelona,
+    team2logo: psg,
+    time: '12.01.2023 21:45',
   },
 ];
