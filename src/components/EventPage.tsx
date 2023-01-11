@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import React, { Dispatch, useCallback, useEffect, useState } from 'react';
 import { IEvent } from './EventField';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { eventsArray } from './data';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
@@ -14,11 +14,23 @@ export interface IEventWithCoef extends IEvent {
   };
 }
 
-const EventPage = () => {
+export interface INewBet {
+  team1: string;
+  team2: string;
+  winner: string;
+  coef: number;
+}
+
+interface IProps {
+  setNewBet: Dispatch<React.SetStateAction<null | INewBet>>;
+}
+
+const EventPage = ({ setNewBet }: IProps) => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+
   const [event, setEvent] = useState<IEventWithCoef | null>(null);
   const [result, setResult] = useState<null | string>(null);
-
-  const { id } = useParams();
 
   useEffect(() => {
     eventsArray.map((item) => {
@@ -27,6 +39,30 @@ const EventPage = () => {
       }
     });
   }, [id]);
+
+  const btnHandler = useCallback(() => {
+    let winner;
+    switch (result) {
+      case 'win1':
+        winner = 'Победа 1';
+        break;
+      case 'draw':
+        winner = 'Ничья';
+        break;
+      case 'win2':
+        winner = 'Победа 2';
+        break;
+    }
+
+    const newBet = {
+      team1: event?.team1 || '',
+      team2: event?.team2 || '',
+      winner: winner || '',
+      coef: event?.coef[result as string] || 0,
+    };
+    setNewBet(newBet);
+    navigate('/');
+  }, [navigate, event, result, setNewBet]);
 
   if (!event) {
     return <div className="">Sorry, cant find this event</div>;
@@ -37,7 +73,7 @@ const EventPage = () => {
       <div className="flex flex-col pt-5 gap-5 text-center  sm:pt-16 ">
         <h2 className="font-bold text-xl sm:text-2xl">Сделать ставку</h2>
         <div className="flex flex-col gap-4 items-center justify-center bg-slate-50 p-3 rounded-3xl  shadow-md sm:p-6">
-          <div className="flex justify-center items-center gap-10 mt-5">
+          <div className="flex justify-center items-center gap-4 mt-5 sm:gap-8 ">
             <div className="flex flex-col items-center gap-3 ">
               <img src={event.team1logo} alt={event.team1} className="w-[32px] h-[32px]" />
               <p className="text-xl font-bold">{event.team1}</p>
@@ -47,7 +83,7 @@ const EventPage = () => {
             </div>
             <div className="flex flex-col items-center gap-3 ">
               <img src={event.team2logo} alt={event.team2} className="w-[32px] h-[32px]" />
-              <p className="text-xl font-bold">{event.team2}</p>
+              <p className="text-lg font-bold sm:text-xl">{event.team2}</p>
             </div>
           </div>
           <div className="flex gap-3">
@@ -71,6 +107,13 @@ const EventPage = () => {
               <FormControlLabel value="win2" control={<Radio />} label="Победа 2" />
             </RadioGroup>
           </FormControl>
+
+          <button
+            onClick={btnHandler}
+            className="bg-green-400 py-2 px-5 rounded-lg transition-all text-white font-bold hover:bg-green-800 active:scale-90 "
+          >
+            Сделать ставку
+          </button>
         </div>
       </div>
     );

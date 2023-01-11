@@ -1,9 +1,17 @@
 import { liveEventsArray, nextEventsArray } from './data';
 import EventField from './EventField';
+import { INewBet } from './EventPage';
 
-const Events = () => {
+interface IProps {
+  newBet: INewBet | null;
+}
+
+const Events = ({ newBet }: IProps) => {
   return (
     <div className="flex flex-col py-20">
+      {newBet && (
+        <div className="mb-10 text-center text-red-400 font-bold">{`Ваша ставка ${newBet.winner} в матче ${newBet.team1} - ${newBet.team2} принята (коэфф ${newBet.coef}) `}</div>
+      )}
       <div className="mb-10">
         <h2 className="w-full bg-green-700 text-center text-white font-bold rounded-t-xl">
           Текущие события
@@ -21,7 +29,6 @@ const Events = () => {
           })}
         </div>
       </div>
-
       <div className="">
         <h2 className="w-full bg-green-700 text-center text-white font-bold rounded-t-xl">
           Предстоящие события
