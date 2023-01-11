@@ -103,6 +103,11 @@ export const eventsArray = [
     team2: 'ПСЖ',
     team1logo: bayern,
     team2logo: psg,
+    coef: {
+      win1: 2.65,
+      draw: 4.08,
+      win2: 1.15,
+    },
   },
   {
     id: 2,
@@ -110,6 +115,11 @@ export const eventsArray = [
     team2: 'Челси',
     team1logo: barcelona,
     team2logo: chelsea,
+    coef: {
+      win1: 2.65,
+      draw: 4.08,
+      win2: 1.15,
+    },
   },
   {
     id: 3,
@@ -117,6 +127,11 @@ export const eventsArray = [
     team2: 'Арсенал',
     team1logo: liverpool,
     team2logo: arsenal,
+    coef: {
+      win1: 2.65,
+      draw: 4.08,
+      win2: 1.15,
+    },
   },
   {
     id: 4,
@@ -124,6 +139,11 @@ export const eventsArray = [
     team2: 'Ювентус',
     team1logo: napoli,
     team2logo: juventus,
+    coef: {
+      win1: 2.65,
+      draw: 4.08,
+      win2: 1.15,
+    },
   },
   {
     id: 5,
@@ -132,6 +152,11 @@ export const eventsArray = [
     team1logo: lazio,
     team2logo: juventus,
     time: 'Сегодня 19:00',
+    coef: {
+      win1: 2.65,
+      draw: 4.08,
+      win2: 1.15,
+    },
   },
   {
     id: 6,
@@ -140,6 +165,11 @@ export const eventsArray = [
     team1logo: arsenal,
     team2logo: chelsea,
     time: 'Сегодня 21:45',
+    coef: {
+      win1: 2.65,
+      draw: 4.08,
+      win2: 1.15,
+    },
   },
   {
     id: 7,
@@ -148,5 +178,10 @@ export const eventsArray = [
     team1logo: barcelona,
     team2logo: psg,
     time: '12.01.2023 21:45',
+    coef: {
+      win1: 2.65,
+      draw: 4.08,
+      win2: 1.15,
+    },
   },
 ];
