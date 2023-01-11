@@ -15,25 +15,3 @@ const Header = () => {
 };
 
 export default Header;
-
-{
-  /* <a className="block border-t-4  border-green-400 cursor-pointer hover:bg-green-100">
-<h3 className="bg-green-400 w-full px-3">Лига чемпионов 2022/23</h3>
-<div className="event-field p-2 sm:p-4">
-  <div className="justify-self-center text-red-600 text-xs mb-2 font-medium sm:font-bold sm:text-base sm:mb-0">
-    LIVE
-  </div>
-  <div className="flex items-center gap-3 justify-self-center">
-    <div className="flex items-center justify-center gap-2 font-medium">
-      Бавария
-      <img src={bayern} alt="Бавария" />
-    </div>
-    <div className="font-extrabold">{' - '}</div>
-    <div className="flex items-center justify-center gap-2 font-medium">
-      ПСЖ
-      <img src={psg} alt="ПСЖ" />
-    </div>
-  </div>
-</div>
-</a> */
-}
